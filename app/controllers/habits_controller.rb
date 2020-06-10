@@ -1,4 +1,5 @@
 class HabitsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_habit, only: [:show, :edit, :update, :destroy]
 
   # GET /habits
@@ -15,7 +16,7 @@ class HabitsController < ApplicationController
   # GET /habits/new
   def new
     @habit = Habit.new
-    @category = Category.all
+    @categories = Category.all
   end
 
   # GET /habits/1/edit
@@ -26,6 +27,7 @@ class HabitsController < ApplicationController
   # POST /habits.json
   def create
     @habit = Habit.new(habit_params)
+    @habit.user = current_user
 
     respond_to do |format|
       if @habit.save
