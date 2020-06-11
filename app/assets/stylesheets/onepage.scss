@@ -1,3 +1,15 @@
 // Place all the styles related to the onepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    background-color: #f2f2f2;
+}
+
+.habit-container{
+    background-color: white;
+    box-shadow: 0 0 80px grey;
+    margin-top: 50px;
+    margin-left: -75px;
+    padding: 0 20px;
+}
