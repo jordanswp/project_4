@@ -8,8 +8,13 @@ body {
 
 .habit-container{
     background-color: white;
-    box-shadow: 0 0 80px grey;
+    box-shadow: 0 0 1px grey;
     margin-top: 50px;
     margin-left: -75px;
     padding: 0 20px;
+}
+
+.doneButton{
+        display: inline-flex;
+        align-items: flex-end;
 }

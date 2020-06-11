@@ -1,4 +1,5 @@
 class HabitsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_habit, only: [:show, :edit, :update, :destroy]
 
   # GET /habits

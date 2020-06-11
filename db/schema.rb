@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_142353) do
 
   create_table "habits", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.integer "duration"
     t.boolean "completed"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false

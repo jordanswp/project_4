@@ -10,6 +10,11 @@ class HabitSquare extends React.Component {
         };
     }
 
+
+    reduceDuration(){
+        this.props.reduceDuration()
+    }
+
   render() {
 
         const habits = this.props.habits.map((habit,index)=>{
@@ -17,7 +22,7 @@ class HabitSquare extends React.Component {
                     <React.Fragment key = {index}>
 
                         <div value={index} >
-                                {habit.title} - {habit.description}
+                                {habit.title} - {this.props.duration} days <button className="doneButton btn btn-primary">Done</button>
                         </div>
 
                     </React.Fragment>);
@@ -26,7 +31,7 @@ class HabitSquare extends React.Component {
 
     return (
             <div className="habit-container">
-            {habits}
+                {habits}
             </div>
     );
   }

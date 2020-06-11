@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
+      <th>Duration</th>
       <th>Completed</th>
       <th>User</th>
       <th>Category</th>
@@ -18,7 +18,7 @@
     <% @habits.each do |habit| %>
       <tr>
         <td><%= habit.title %></td>
-        <td><%= habit.description %></td>
+        <td><%= habit.duration %> days</td>
         <td><%= habit.completed %></td>
         <td><%= habit.user_id %></td>
         <td><%= habit.category_id %></td>
