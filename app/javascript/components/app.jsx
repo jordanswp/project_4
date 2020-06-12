@@ -10,8 +10,7 @@ class App extends React.Component {
 
         this.state = {
             habits: [],
-            habit:{},
-            duration: ''
+            habit:{}
         };
     }
 
@@ -33,14 +32,16 @@ class App extends React.Component {
 
     getOneHabit = (index) =>{
         let habit = this.state.habits[index];
-        this.setState({ habit : habit})
+        this.setState({ habit : habit })
     }
 
-    getOneHabitDuration(){
-        let habit = this.state.habit;
-        let habitDuration = habit.duration;
-        this.setState({duration : habitDuration});
-        console.log("duration is " + this.state.duration)
+    reduceDuration = (e) =>{
+        // console.log(e.target.value)
+        let habits = this.state.habits;
+        console.log(habits[e.target.value])
+        let habitDuration = habits[e.target.value].duration;
+        let reduceDuration = parseInt(habitDuration) - 1;
+        console.log("duration is " + reduceDuration)
     }
 
 
@@ -50,7 +51,7 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className=" col-sm-8">
-                        <HabitSquare habits={this.state.habits} duration={this.state.duration} habit={this.state.habit} />
+                        <HabitSquare habits={this.state.habits} duration={this.state.duration} habit={this.state.habit} reduceDuration={this.reduceDuration} getOneHabit={this.getOneHabit} />
                     </div>
 
                     <div className=" col-sm-4">
