@@ -10,7 +10,7 @@ class App extends React.Component {
 
         this.state = {
             habits: [],
-            habit:{}
+            habit:{},
         };
     }
 
@@ -38,10 +38,13 @@ class App extends React.Component {
     reduceDuration = (e) =>{
         // console.log(e.target.value)
         let habits = this.state.habits;
-        console.log(habits[e.target.value])
-        let habitDuration = habits[e.target.value].duration;
-        let reduceDuration = parseInt(habitDuration) - 1;
-        console.log("duration is " + reduceDuration)
+        let target = e.target.value;
+
+        habits[target].duration = habits[target].duration - 1;
+        this.setState({ habits: habits })
+        console.log(habits[target])
+
+
     }
 
 
