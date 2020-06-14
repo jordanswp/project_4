@@ -45,9 +45,11 @@ class HabitsController < ApplicationController
   def update
     respond_to do |format|
       if @habit.update(habit_params)
+        puts("updated")
         format.html { redirect_to @habit, notice: 'Habit was successfully updated.' }
         format.json { render :show, status: :ok, location: @habit }
       else
+        puts("not updated")
         format.html { render :edit }
         format.json { render json: @habit.errors, status: :unprocessable_entity }
       end
@@ -72,6 +74,6 @@ class HabitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def habit_params
-      params.require(:habit).permit(:title, :description, :completed, :user_id, :category_id)
+      params.require(:habit).permit(:title, :duration, :completed, :user_id, :category_id)
     end
 end

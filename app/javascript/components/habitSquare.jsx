@@ -12,22 +12,27 @@ class HabitSquare extends React.Component {
 
     reduceDuration(e){
         this.props.reduceDuration(e)
-        // console.log(e)
     }
+
 
   render() {
 
-        const habits = this.props.habits.map((habit,index)=>{
+        const sortedHabits = this.props.habits.sort((a, b)=>{
+            if(a.id > b.id)return 1;
+             else return -1;
+        });
+
+        const habits = sortedHabits.map((habit,index)=>{
             return (
                     <React.Fragment key = {index}>
 
                         <div value={index} >
+
                                 {habit.title} - {habit.duration} days <button value={index} onClick={ (e)=>{ this.reduceDuration(e) } } className="doneButton btn btn-primary" >Done</button>
                         </div>
 
                     </React.Fragment>);
             });
-
 
     return (
             <div className="habit-container">
