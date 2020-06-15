@@ -10,7 +10,8 @@ class App extends React.Component {
 
         this.state = {
             habits: [],
-            habit:{}
+            habit:{},
+            duration:''
         };
     }
 
@@ -24,23 +25,26 @@ class App extends React.Component {
             .then((response) => {
               const data = response.data;
 
-              this.setState({ habits: data });
-            }).catch((error)=>{
-              console.log(error);
-            })
+
+                  let totalDuration = 0;
+
+                  for(var i = 0; i < data.length; i++){
+                      totalDuration += parseInt(data[i].duration)
+                  }
+
+
+
+                  this.setState({ habits: data, duration : totalDuration });
+                }).catch((error)=>{
+                  console.log(error);
+                })
     }
 
     updateOneHabit = (index) =>{
         let habit = this.state.habits[index];
         this.setState({ habit : habit })
-        console.log("helooooooo" + habit)
     }
 
-
-    // updateHabit(){
-
-
-    // }
 
     reduceDuration = (e) =>{
 
@@ -51,13 +55,13 @@ class App extends React.Component {
         habits[target].duration = habits[target].duration - 1;
         // console.log(this.state.habit)
 
-    const payload = {
-      title: habits[target].title,
-      duration: habits[target].duration,
-      completed: habits[target].completed,
-      category_id:habits[target].category_id,
-      user_id: habits[target].user_id
-    };
+        const payload = {
+          title: habits[target].title,
+          duration: habits[target].duration,
+          completed: habits[target].completed,
+          category_id:habits[target].category_id,
+          user_id: habits[target].user_id
+        };
 
         console.log(habits[target])
         const url = "/habits/" + habits[target].id + ".json";
@@ -76,17 +80,19 @@ class App extends React.Component {
     }
 
 
+
+
   render() {
     return (
         <body>
             <div className="container">
                 <div className="row">
                     <div className=" col-sm-8">
-                        <HabitSquare habits={this.state.habits} duration={this.state.duration} habit={this.state.habit} reduceDuration={this.reduceDuration} />
+                        <HabitSquare habits={this.state.habits} habit={this.state.habit} reduceDuration={this.reduceDuration} />
                     </div>
 
                     <div className=" col-sm-4">
-                        <ProgressSquare />
+                        <ProgressSquare habits={this.state.habits} duration={this.state.duration} />
                     </div>
                 </div>
             </div>
