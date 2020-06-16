@@ -17,11 +17,7 @@
     </ul>
   </div>
 
-  <!-- search bar -->
-    <form class="form-inline col-9 d-flex justify-content-center ml-auto" action="/search">
-      <input type="text" class="form-control mr-sm-2 col-lg-5" placeholder="Search" name="q">
-      <button type="submit" class="searchBtn btn btn-outline-light mr-1"><%= image_tag("logos/whitesearch.png", width: '20px') %></button>
-    </form>
+
   <!-- right nav container -->
     <div class="userNav d-flex justify-content-end col-md-2" style="margin-left: -110px">
       <% if user_signed_in? %>
