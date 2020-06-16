@@ -6,7 +6,6 @@
           <thead>
             <tr>
               <th>Title</th>
-              <th>ID</th>
               <th>Category</th>
               <th>Duration</th>
               <th>Duration Left</th>
@@ -18,7 +17,6 @@
             <% @habits.each do |habit| %>
               <tr>
                 <td id="habit-title"><a href="/habits/<%= habit.id %>"><%= habit.title %></a></td>
-                <td><%= habit.id %></td>
                 <td><%= habit.category.name %></td>
                 <td><%= habit.duration %> day(s)</td>
                 <td><%= habit.durationLeft %> day(s)</td>

@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import HabitSquare from './habitSquare';
 import ProgressSquare from './progressSquare';
+import MotivationSquare from './motivationSquare';
 
 class App extends React.Component {
 
@@ -83,6 +84,7 @@ class App extends React.Component {
     return (
         <body>
             <div className="container">
+
                 <div className="row">
                     <div className=" col-sm-8">
                         <HabitSquare habits={this.state.habits} habit={this.state.habit} reduceDuration={this.reduceDuration} />
@@ -92,6 +94,13 @@ class App extends React.Component {
                         <ProgressSquare habits={this.state.habits} allDuration={this.state.allDuration} allDurationLeft={this.state.allDurationLeft} />
                     </div>
                 </div>
+
+                <div className="motivate row">
+                    <div className=" col-sm-12">
+                        <MotivationSquare  />
+                    </div>
+                </div>
+
             </div>
         </body>
     );

@@ -46,6 +46,7 @@ class HabitSquare extends React.Component {
                     <div className="habits-list col">
                         {habits}
                     </div>
+
                 </div>
 
             </div>

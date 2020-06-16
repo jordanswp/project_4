@@ -10,7 +10,6 @@ body {
     background-color: white;
     box-shadow: 0 0 1px grey;
     margin-top: 50px;
-    margin-left: -75px;
     padding: 0 20px;
 }
 
@@ -33,4 +32,22 @@ body {
 
 .habits-list {
     padding-bottom: 20px;
+}
+
+.motivation-container{
+    background-color: white;
+    box-shadow: 0 0 1px grey;
+    margin-top: 42px;
+    padding: 20px 0px;
+}
+
+.speaker {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 150px;
+    margin-top: -25px;
+}
+
+.quote, .speaker {
+    font-family: futura;
 }
