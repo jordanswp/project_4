@@ -28,7 +28,7 @@ class HabitSquare extends React.Component {
 
                         <div value={index} >
 
-                                {habit.title} - {habit.duration} days <button value={index} onClick={ (e)=>{ this.reduceDuration(e) } } className="doneButton btn btn-primary" >Done</button>
+                                {habit.title} - {habit.durationLeft} days <button value={index} onClick={ (e)=>{ this.reduceDuration(e) } } className="doneButton btn btn-primary" >Done</button>
                         </div>
 
                     </React.Fragment>);

@@ -11,7 +11,8 @@ class App extends React.Component {
         this.state = {
             habits: [],
             habit:{},
-            duration:''
+            allDuration:'',
+            allDurationLeft:''
         };
     }
 
@@ -27,14 +28,15 @@ class App extends React.Component {
 
 
                   let totalDuration = 0;
+                  let totalDurationLeft = 0;
 
                   for(var i = 0; i < data.length; i++){
                       totalDuration += parseInt(data[i].duration)
+                      totalDurationLeft += parseInt(data[i].durationLeft)
                   }
 
+                  this.setState({ habits: data, allDuration : totalDuration, allDurationLeft : totalDurationLeft });
 
-
-                  this.setState({ habits: data, duration : totalDuration });
                 }).catch((error)=>{
                   console.log(error);
                 })
@@ -48,22 +50,19 @@ class App extends React.Component {
 
     reduceDuration = (e) =>{
 
-        // console.log(e.target.value)
         let habits = this.state.habits;
         let target = e.target.value;
 
-        habits[target].duration = habits[target].duration - 1;
-        // console.log(this.state.habit)
+        habits[target].durationLeft = habits[target].durationLeft - 1;
 
         const payload = {
           title: habits[target].title,
           duration: habits[target].duration,
-          completed: habits[target].completed,
+          durationLeft: habits[target].durationLeft,
           category_id:habits[target].category_id,
           user_id: habits[target].user_id
         };
 
-        console.log(habits[target])
         const url = "/habits/" + habits[target].id + ".json";
 
           axios.put(url, payload)
@@ -80,8 +79,6 @@ class App extends React.Component {
     }
 
 
-
-
   render() {
     return (
         <body>
@@ -92,7 +89,7 @@ class App extends React.Component {
                     </div>
 
                     <div className=" col-sm-4">
-                        <ProgressSquare habits={this.state.habits} duration={this.state.duration} />
+                        <ProgressSquare habits={this.state.habits} allDuration={this.state.allDuration} allDurationLeft={this.state.allDurationLeft} />
                     </div>
                 </div>
             </div>

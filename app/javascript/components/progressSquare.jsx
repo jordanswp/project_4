@@ -10,16 +10,20 @@ class ProgressSquare extends React.Component {
         super()
 
         this.state = {
+            percentage:''
         };
     }
 
 
+
   render() {
-    const habitsArray = this.props.habits;
+    const allDuration = this.props.allDuration;
+    const allDurationLeft = this.props.allDurationLeft;
+    const done = allDuration - allDurationLeft;
 
-    // const habitsDuration = habitsArray[0].duration
+    const percentage = parseInt( (done/allDuration) * 100 );
 
-    const percentage = 66;
+    console.log(percentage)
 
 
     return (

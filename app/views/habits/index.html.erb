@@ -1,35 +1,34 @@
-<p id="notice"><%= notice %></p>
+<body>
+    <div class="indexBox container col-sm-10">
+        <h6 class="title">All Habits</h6>
 
-<h1>Habits</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>ID</th>
+              <th>Category</th>
+              <th>Duration</th>
+              <th>Duration Left</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Duration</th>
-      <th>Completed</th>
-      <th>User</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
+            <% @habits.each do |habit| %>
+              <tr>
+                <td id="habit-title"><a href="/habits/<%= habit.id %>"><%= habit.title %></a></td>
+                <td><%= habit.id %></td>
+                <td><%= habit.category.name %></td>
+                <td><%= habit.duration %> day(s)</td>
+                <td><%= habit.durationLeft %> day(s)</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <tbody>
-    <% @habits.each do |habit| %>
-      <tr>
-        <td><%= habit.title %></td>
-        <td><%= habit.duration %> days</td>
-        <td><%= habit.completed %></td>
-        <td><%= habit.user_id %></td>
-        <td><%= habit.category_id %></td>
-        <td><%= link_to 'Show', habit %></td>
-        <td><%= link_to 'Edit', edit_habit_path(habit) %></td>
-        <td><%= link_to 'Destroy', habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Habit', new_habit_path %>
+        <br>
+        <p id="notice"><%= notice %></p>
+        <%= link_to 'New Habit', new_habit_path, class: 'new-habit btn btn-info' %>
+    </div>
+</body>

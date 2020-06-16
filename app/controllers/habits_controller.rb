@@ -21,6 +21,7 @@ class HabitsController < ApplicationController
 
   # GET /habits/1/edit
   def edit
+        @categories = Category.all
   end
 
   # POST /habits
@@ -74,6 +75,6 @@ class HabitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def habit_params
-      params.require(:habit).permit(:title, :duration, :completed, :user_id, :category_id)
+      params.require(:habit).permit(:title, :duration, :durationLeft, :user_id, :category_id)
     end
 end

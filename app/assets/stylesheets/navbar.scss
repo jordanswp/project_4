@@ -2,17 +2,12 @@
   top: 0px;
   position: sticky;
   z-index: 5;
-  box-shadow: 0px 2px 2px;
+  box-shadow: 0px 2px 2px #ed5843;
 }
 
-.navBarTwo {
-  top: 60px;
-  position: sticky;
-  z-index: 1;
-}
 
 .bg-navBg {
-  background-image: linear-gradient(-50deg, #492E28 0%, #284349 100%);
+  background-image: linear-gradient(-50deg, #e63247 0%, #ed5843 100%);
 }
 
 .signNav {
@@ -26,43 +21,6 @@
   color: grey;
 }
 
-.dropdown {
-  z-index: 10 !important;
-}
 
- // animation for category bar 
-.hvr-underline-from-center {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  overflow: hidden;
-}
-
-.hvr-underline-from-center:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 51%;
-  right: 51%;
-  bottom: 0;
-  background: #114349;
-  opacity: 0.6;
-  height: 4px;
-  transition-property: left, right;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-}
-
-.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
-  left: 0;
-  right: 0;
-}
-
-.searchBtn:hover {
-  filter: invert(1);
-  background-color: black;
-}
 
 

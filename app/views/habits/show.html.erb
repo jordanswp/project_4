@@ -1,24 +1,35 @@
-<p id="notice"><%= notice %></p>
+<body>
+    <div class="showBox container col-sm-6">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @habit.title %>
-</p>
+        <h4 class="title"><%= @habit.title %></h4>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @habit.duration %>
-</p>
+        <div class="top row">
 
-<p>
-  <strong>Completed:</strong>
-  <%= @habit.completed %>
-</p>
+            <p>
+              <strong>Duration:</strong>
+                <br />
+              <span><%= @habit.duration %></span>
+            </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @habit.category_id %>
-</p>
+            <p>
+              <strong>Duration Left:</strong>
+                <br />
+              <span><%= @habit.durationLeft %></span>
+            </p>
 
-<%= link_to 'Edit', edit_habit_path(@habit) %> |
-<%= link_to 'Back', habits_path %>
+            <p>
+              <strong>Category:</strong>
+                <br />
+              <span><%= @habit.category.name %></span>
+            </p>
+
+        </div>
+
+        <div class="bottom row">
+            <%= link_to 'Edit Habit', edit_habit_path(@habit), class: 'edit-btn btn btn-info' %>
+            <%= link_to 'Delete Habit', @habit, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+        </div>
+            <%= link_to 'Go Back', habits_path, class: 'back-btn btn btn-light' %>
+    </div>
+</body>

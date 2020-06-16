@@ -1,0 +1,56 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.indexBox {
+    border-top: 2px solid #EB4E46;
+    background: white;
+    box-shadow: 0 0 2px grey;
+    position: relative;
+    top: 70px;
+    margin-top: 50px;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+
+.title {
+    padding-top: 20px;
+    font-family: arial;
+    padding-bottom: 15px;
+    width: 100%;
+    border-bottom: 1px solid #f3f4f8;
+}
+
+td, th {
+    font-family: arial;
+}
+
+table, thead, tbody {
+    margin-top: 20px;
+}
+
+th, td {
+    padding-right: 120px;
+}
+
+th {
+    padding-bottom: 15px;
+}
+
+td {
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+#habit-title{
+    text-align: left;
+}
+
+.new-habit {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+a {
+        color: #ed5843;
+}
