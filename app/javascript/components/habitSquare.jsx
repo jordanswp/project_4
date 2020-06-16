@@ -26,17 +26,28 @@ class HabitSquare extends React.Component {
             return (
                     <React.Fragment key = {index}>
 
-                        <div value={index} >
+                        <div value={index} style={{ paddingTop: '15px' }} >
 
-                                {habit.title} - {habit.durationLeft} days <button value={index} onClick={ (e)=>{ this.reduceDuration(e) } } className="doneButton btn btn-primary" >Done</button>
+                                <span className="all-habits">
+                                    {habit.title} - {habit.durationLeft} days
+                                    <button value={index} onClick={ (e)=>{ this.reduceDuration(e) } } className="doneButton btn btn-primary" >Done</button>
+                                </span>
                         </div>
 
                     </React.Fragment>);
             });
 
     return (
-            <div className="habit-container">
-                {habits}
+            <div>
+
+                <div className="habit-container">
+                    <h4 className="dashboard-title">My Habits</h4>
+
+                    <div className="habits-list col">
+                        {habits}
+                    </div>
+                </div>
+
             </div>
     );
   }

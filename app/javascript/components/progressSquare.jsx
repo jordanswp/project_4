@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 class ProgressSquare extends React.Component {
@@ -10,7 +10,6 @@ class ProgressSquare extends React.Component {
         super()
 
         this.state = {
-            percentage:''
         };
     }
 
@@ -28,7 +27,11 @@ class ProgressSquare extends React.Component {
 
     return (
             <div className="progress-container">
-                <CircularProgressbar value={percentage} text={`${percentage}%`} />
+                <CircularProgressbar
+                  value={percentage}
+                  text={`${percentage}%`}
+                  styles={buildStyles({ textSize: '12px', textColor: '#ec5144', pathColor: '#ec5144', trailColor: '#e6e6e6'  })}
+                />
             </div>
     );
   }

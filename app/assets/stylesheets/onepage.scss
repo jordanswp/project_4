@@ -14,14 +14,23 @@ body {
     padding: 0 20px;
 }
 
-.doneButton{
-        display: inline-flex;
-        align-items: flex-end;
+.all-habits{
+    display: flex;
+    justify-content: space-between;
+    color: black
 }
 
 .progress-container{
     background-color: white;
     box-shadow: 0 0 1px grey;
-    margin-top: 50px;
-    padding: 0 20px;
+    margin-top: 42px;
+    padding: 57px 20px;
+}
+
+.dashboard-title {
+    padding: 20px 0px;
+}
+
+.habits-list {
+    padding-bottom: 20px;
 }
